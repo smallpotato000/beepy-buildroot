@@ -51,6 +51,15 @@ echo ""
 # `make linux-savedefconfig` to save defconfig
 # it's stored in buildroot/output/build/linux-custom/defconfig
 
+# Apply gcc-related patches
+echo "Applying gcc-related patches..."
+pushd buildroot
+git apply ../patches/0001-Add-GCC-target-package.patch
+git apply ../patches/0001-Don-t-remove-sdl2-config.patch
+git apply ../patches/0001-Install-Cmake-target-tools.patch
+popd
+echo ""
+
 # Build the SD card image containing Buildroot OS
 echo "Building Buildroot OS..."
 cd buildroot
