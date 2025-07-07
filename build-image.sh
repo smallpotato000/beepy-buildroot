@@ -53,11 +53,11 @@ echo ""
 
 # Apply gcc-related patches
 echo "Applying gcc-related patches..."
-pushd buildroot
+cd buildroot
 git apply ../patches/0001-Add-GCC-target-package.patch
 git apply ../patches/0001-Don-t-remove-sdl2-config.patch
 git apply ../patches/0001-Install-Cmake-target-tools.patch
-popd
+cd ..
 echo ""
 
 # Build the SD card image containing Buildroot OS
